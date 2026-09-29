@@ -5,13 +5,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'DOCKER_HUB_USERNAME/swe645-survey-app:latest'
+        DOCKER_IMAGE = 'jkeetha28/swe645-survey-app:latest'
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY.git'
+                git branch: 'main', url: 'https://github.com/joshkeetha2803/swe645-assignment2.git'
             }
         }
 

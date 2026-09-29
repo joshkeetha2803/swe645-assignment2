@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: survey-container
-        image: DOCKER_HUB_USERNAME/swe645-survey-app:latest
+        image: jkeetha28/swe645-survey-app:latest
         ports:
         - containerPort: 80
