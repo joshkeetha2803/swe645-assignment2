@@ -1,0 +1,279 @@
+<!-- 
+  Name: Joshitha Keetha
+  GMU ID : G01575681
+  Course: SWE-645
+  Purpose: The Student Survey Form for Part 2 of Assignment 1 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Survey Form - GMU</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-msg {
+      color: #d9534f;
+      font-size: 0.85em;
+      font-weight: bold;
+      display: none;
+      margin-top: 3px;
+    }
+    .format-hint {
+      font-size: 0.8em;
+      color: #666;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header-banner">
+    <h1>George Mason University</h1>
+    <p>Prospective Student Survey Form</p>
+  </header>
+
+  <main class="container" style="justify-content: center;">
+    <section class="card" style="width: 100%; max-width: 750px;">
+      <h2>Student Survey</h2>
+      <form id="surveyForm" onsubmit="return validateAndSubmit(event)">
+        
+        <!-- First Name Field-->
+        <div class="form-group">
+          <label for="firstName">First Name:* <span class="format-hint">(Alphabets only)</span></label>
+          <input type="text" id="firstName" name="firstName" class="form-control" placeholder="e.g. John" required>
+          <div id="firstNameError" class="error-msg">Format is not correct: First name must contain letters only.</div>
+        </div>
+
+        <!-- Last Name Field -->
+        <div class="form-group">
+          <label for="lastName">Last Name:* <span class="format-hint">(Alphabets only)</span></label>
+          <input type="text" id="lastName" name="lastName" class="form-control" placeholder="e.g. Doe" required>
+          <div id="lastNameError" class="error-msg">Format is not correct: Last name must contain letters only.</div>
+        </div>
+
+        <!-- Street Address Field -->
+        <div class="form-group">
+          <label for="streetAddress">Street Address:* <span class="format-hint">(Numbers and street name)</span></label>
+          <input type="text" id="streetAddress" name="streetAddress" class="form-control" placeholder="e.g. 4400 University Dr" required>
+          <div id="streetAddressError" class="error-msg">Format is not correct: Please enter a valid street address.</div>
+        </div>
+
+        <!-- City Field -->
+        <div class="form-group">
+          <label for="city">City:* <span class="format-hint">(Alphabets only)</span></label>
+          <input type="text" id="city" name="city" class="form-control" placeholder="e.g. Fairfax" required>
+          <div id="cityError" class="error-msg">Format is not correct: City must contain letters only.</div>
+        </div>
+
+        <!-- State Field -->
+        <div class="form-group">
+          <label for="state">State:* <span class="format-hint">(2-letter code or full state name)</span></label>
+          <input type="text" id="state" name="state" class="form-control" placeholder="e.g. VA or Virginia" required>
+          <div id="stateError" class="error-msg">Format is not correct: Enter a valid state name or 2-letter abbreviation.</div>
+        </div>
+
+        <!-- Zip Field -->
+        <div class="form-group">
+          <label for="zip">Zip:* <span class="format-hint">(5 digits)</span></label>
+          <input type="text" id="zip" name="zip" class="form-control" placeholder="e.g. 22030" required>
+          <div id="zipError" class="error-msg">Format is not correct: Zip code must be 5 digits.</div>
+        </div>
+
+        <!-- Telephone Number Field -->
+        <div class="form-group">
+          <label for="telephone">Telephone Number:* <span class="format-hint">(10 digits, e.g., 703-123-4567 or 7031234567)</span></label>
+          <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="e.g. 703-123-4567" required>
+          <div id="telephoneError" class="error-msg">Format is not correct: Please enter a valid 10-digit phone number.</div>
+        </div>
+
+        <!-- E-mail Field -->
+        <div class="form-group">
+          <label for="email">E-mail:* <span class="format-hint">(username@domain.com)</span></label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="e.g. student@gmu.edu" required>
+          <div id="emailError" class="error-msg">Format is not correct: Please enter a valid email address.</div>
+        </div>
+
+        <!-- Date of Survey Field -->
+        <div class="form-group">
+          <label for="surveyDate">Date of Survey:* <span class="format-hint">(MM/DD/YYYY)</span></label>
+          <input type="date" id="surveyDate" name="surveyDate" class="form-control" required>
+          <div id="surveyDateError" class="error-msg">Format is not correct: Please select a valid survey date.</div>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="form-group">
+          <label>What did you like most about the campus?</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="likedMost" value="students"> Students</label>
+            <label><input type="checkbox" name="likedMost" value="location"> Location</label>
+            <label><input type="checkbox" name="likedMost" value="campus"> Campus</label>
+            <label><input type="checkbox" name="likedMost" value="atmosphere"> Atmosphere</label>
+            <label><input type="checkbox" name="likedMost" value="dormRooms"> Dorm Rooms</label>
+            <label><input type="checkbox" name="likedMost" value="sports"> Sports</label>
+          </div>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="form-group">
+          <label>How did you become interested in the university?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="interestSource" value="friends"> Friends</label>
+            <label><input type="radio" name="interestSource" value="television"> Television</label>
+            <label><input type="radio" name="interestSource" value="internet"> Internet</label>
+            <label><input type="radio" name="interestSource" value="other"> Other</label>
+          </div>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="form-group">
+          <label for="recommendation">Likelihood of recommending this school to prospective students:</label>
+          <select id="recommendation" name="recommendation" class="form-control">
+            <option value="Very Likely">Very Likely</option>
+            <option value="Likely">Likely</option>
+            <option value="Unlikely">Unlikely</option>
+          </select>
+        </div>
+
+        <!-- Raffle Text Box -->
+        <div class="form-group">
+          <label for="raffle">Raffle: <span class="format-hint">(At least 10 comma-separated numbers from 1 to 100)</span></label>
+          <input type="text" id="raffle" name="raffle" class="form-control" placeholder="e.g. 5, 12, 23, 34, 45, 56, 67, 78, 89, 90">
+          <div id="raffleError" class="error-msg">Format is not correct: Must enter at least 10 comma-separated numbers between 1 and 100.</div>
+        </div>
+
+        <!-- Text Area -->
+        <div class="form-group">
+          <label for="comments">Additional Comments:</label>
+          <textarea id="comments" name="comments" rows="4" class="form-control"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div style="margin-top: 20px; display: flex; gap: 10px; align-items: center;">
+          <input type="submit" value="Submit" class="gmu-btn">
+          <input type="reset" value="Cancel" class="gmu-btn gmu-btn-cancel" onclick="resetErrors()">
+          <a href="index.html" class="gmu-btn" style="margin-left: auto;">Back to Homepage</a>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Clearing all the previous eeror messages before validating the form again
+    function resetErrors() {
+      const errorDivs = document.querySelectorAll('.error-msg');
+      errorDivs.forEach(div => div.style.display = 'none');
+    }
+
+    // The main validation function that checks all the form fields and displays error messages if any field is invalid
+
+    function validateAndSubmit(event) {
+      event.preventDefault();
+      resetErrors();
+
+      let isValid = true;
+
+      // 1. First Name Validation (Alphabets only)
+      const firstName = document.getElementById('firstName').value.trim();
+
+    // Regular expression to check for alphabets and spaces only
+      const alphaRegex = /^[A-Za-z\s]+$/;
+      if (!firstName || !alphaRegex.test(firstName)) {
+        document.getElementById('firstNameError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 2. Last Name Validation (Alphabets only)
+      const lastName = document.getElementById('lastName').value.trim();
+      if (!lastName || !alphaRegex.test(lastName)) {
+        document.getElementById('lastNameError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 3. Street Address Validation
+      const streetAddress = document.getElementById('streetAddress').value.trim();
+      if (!streetAddress || streetAddress.length < 3) {
+        document.getElementById('streetAddressError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 4. City Validation (Alphabets only)
+      const city = document.getElementById('city').value.trim();
+      if (!city || !alphaRegex.test(city)) {
+        document.getElementById('cityError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 5. State Validation
+      const state = document.getElementById('state').value.trim();
+      if (!state || !alphaRegex.test(state)) {
+        document.getElementById('stateError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 6. Zip Code Validation (5 digits)
+      const zip = document.getElementById('zip').value.trim();
+      const zipRegex = /^\d{5}$/;
+      if (!zip || !zipRegex.test(zip)) {
+        document.getElementById('zipError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 7. Telephone Number Validation (10 digits)
+      const telephone = document.getElementById('telephone').value.trim();
+      const phoneRegex = /^(\d{10}|\d{3}[-\s]\d{3}[-\s]\d{4})$/;
+      if (!telephone || !phoneRegex.test(telephone)) {
+        document.getElementById('telephoneError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 8. Email Validation
+      const email = document.getElementById('email').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        document.getElementById('emailError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 9. Survey Date Validation
+      const surveyDate = document.getElementById('surveyDate').value;
+      if (!surveyDate) {
+        document.getElementById('surveyDateError').style.display = 'block';
+        isValid = false;
+      }
+
+      // 10. Raffle Validation (At least 10 comma-separated numbers between 1 and 100)
+      const raffleInput = document.getElementById('raffle').value.trim();
+      if (raffleInput !== "") {
+        const raffleArray = raffleInput.split(',').map(item => item.trim());
+        let validRaffle = true;
+
+        if (raffleArray.length < 10) {
+          validRaffle = false;
+        } else {
+          for (let numStr of raffleArray) {
+            const num = Number(numStr);
+            if (numStr === "" || isNaN(num) || num < 1 || num > 100) {
+              validRaffle = false;
+              break;
+            }
+          }
+        }
+
+        if (!validRaffle) {
+          document.getElementById('raffleError').style.display = 'block';
+          isValid = false;
+        }
+      }
+
+      // Reset the form and show a success message if all validations pass
+      if (isValid) {
+        alert("Form submitted successfully!");
+        document.getElementById('surveyForm').reset();
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>

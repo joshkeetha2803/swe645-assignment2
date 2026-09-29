@@ -1,0 +1,24 @@
+# Purpose: Kubernetes Deployment Manifest configured with 3 redundant pods for Assignment 2.
+# Team Members: Joshitha Keetha & Bhuvitha Tummala
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swe645-survey-app
+  labels:
+    app: swe645-survey
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: swe645-survey
+  template:
+    metadata:
+      labels:
+        app: swe645-survey
+    spec:
+      containers:
+      - name: survey-container
+        image: DOCKER_HUB_USERNAME/swe645-survey-app:latest
+        ports:
+        - containerPort: 80

@@ -1,0 +1,141 @@
+<!-- 
+  Team Members: Joshitha Keetha (G01575681) & Bhuvitha Tummala (G01576792)
+  Course: SWE-645
+  Assignment: Assignment 2 - Group Project
+  Purpose: Combined student homepage featuring both team members' profiles, 
+           education, technical skills, projects, and a direct link to the Student Survey Form.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SWE 645 Group Homepage - Joshitha & Bhuvitha</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Two-column layout for equal team member cards */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner Header -->
+  <header class="header-banner">
+    <h1>SWE 645 Group Homepage</h1>
+    <p>Graduate Students | Computer Science | George Mason University</p>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="flex-direction: column; align-items: center;">
+
+    <!-- Team Members Grid -->
+    <div class="team-grid">
+
+      <!-- ================= MEMBER 1: JOSHITHA KEETHA ================= -->
+      <section class="card" style="display: flex; flex-direction: column; gap: 15px;">
+        <div style="text-align: center;">
+          <img src="images/profile.jpg" alt="Joshitha Keetha" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gmu-gold);">
+          <h2 style="margin-top: 10px; border: none; padding: 0;">Joshitha Keetha</h2>
+          <p style="margin: 0; color: #666; font-size: 0.9em;">GMU ID: G01575681 | jkeetha@gmu.edu</p>
+        </div>
+
+        <article>
+          <h3>About Me</h3>
+          <p>
+            I am a Computer Science graduate student at George Mason University. My interests include web development, cybersecurity, cloud computing, and building scalable software solutions.
+          </p>
+        </article>
+
+        <article>
+          <h3>Education</h3>
+          <p><strong>MS in Computer Science</strong> — George Mason University</p>
+          <p><strong>B.Tech in Computer Science</strong> — CVR College of Engineering (CGPA: 8.71/10)</p>
+        </article>
+
+        <article>
+          <h3>Technical Skills</h3>
+          <div class="badge-container">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">Python</span>
+            <span class="badge">C</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Cyber Security</span>
+            <span class="badge">Cloud Computing</span>
+            <span class="badge">AWS</span>
+          </div>
+        </article>
+
+        <article>
+          <h3>Projects</h3>
+          <p><strong>FraudCure - Healthcare Fraud Detection</strong><br>Developed a machine learning-based fraud detection system using Python.</p>
+          <p><strong>Catch Me If U Can!</strong><br>Built a Python-based intrusion detection system using Flask and SQLite.</p>
+        </article>
+      </section>
+
+      <!-- ================= MEMBER 2: BHUVITHA TUMMALA ================= -->
+      <section class="card" style="display: flex; flex-direction: column; gap: 15px;">
+        <div style="text-align: center;">
+          <img src="images/profile1.jpg" alt="Bhuvitha Tummala" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gmu-gold);">
+          <h2 style="margin-top: 10px; border: none; padding: 0;">Bhuvitha Tummala</h2>
+          <p style="margin: 0; color: #666; font-size: 0.9em;">GMU ID: G01576792 | bhuvitha.tummala@gmail.com</p>
+        </div>
+
+        <article>
+          <h3>About Me</h3>
+          <p>
+            I am a motivated computer science engineer with a strong foundation in Artificial Intelligence (AI) and Machine Learning (ML), currently pursuing my Master's at GMU with a 4.0 GPA.
+          </p>
+        </article>
+
+        <article>
+          <h3>Education</h3>
+          <p><strong>MS in Computer Science</strong> — George Mason University (GPA: 4.0)</p>
+          <p><strong>B.Tech in CSE (AI & ML)</strong> — SRM University, AP (CGPA: 8.2)</p>
+        </article>
+
+        <article>
+          <h3>Technical Skills</h3>
+          <div class="badge-container">
+            <span class="badge">Python</span>
+            <span class="badge">Django</span>
+            <span class="badge">Machine Learning</span>
+            <span class="badge">AI Algorithms</span>
+            <span class="badge">Data Analysis</span>
+            <span class="badge">Network Security</span>
+            <span class="badge">DBMS</span>
+            <span class="badge">Web Development</span>
+          </div>
+        </article>
+
+        <article>
+          <h3>Experience & Projects</h3>
+          <p><strong>Web Development Intern</strong> — APSPDC<br>Focused on backend Django development and database administration.</p>
+          <p><strong>Edge Computing for Smart Agriculture</strong><br>Developed an interdisciplinary solution to enhance agricultural efficiency.</p>
+        </article>
+      </section>
+
+    </div>
+
+    <!-- Navigation Card linking to Survey -->
+    <section class="card" style="width: 100%; max-width: 1100px; margin-top: 25px; text-align: center;">
+      <h2>Course Links & Survey</h2>
+      <p>Access the prospective student survey form created for SWE 645:</p>
+      <p style="margin-top: 15px;">
+        <a href="survey.html" class="gmu-btn">Go to Student Survey Form</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.9em;">
+    <p>&copy; 2026 Joshitha Keetha & Bhuvitha Tummala | SWE 645 Assignment 2</p>
+  </footer>
+
+</body>
+</html>
