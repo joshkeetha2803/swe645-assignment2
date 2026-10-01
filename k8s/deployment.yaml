@@ -1,5 +1,6 @@
-# Purpose: Kubernetes Deployment Manifest configured with 3 redundant pods for Assignment 2.
+# Purpose: Kubernetes Deployment Manifest configured with 3 redundant pods 
 # Team Members: Joshitha Keetha & Bhuvitha Tummala
+# SWE-645
 
 apiVersion: apps/v1
 kind: Deployment

@@ -1,5 +1,6 @@
 // Purpose: Jenkins CI/CD Pipeline configuration for automated build and K8s deployment.
 // Team Members: Joshitha Keetha & Bhuvitha Tummala
+// COurse : SWE_645
 
 pipeline {
     agent any
