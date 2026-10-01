@@ -1,4 +1,4 @@
-SWE-645 ASSIGNMENT -2 Video Demonstration
+SWE-645 ASSIGNMENT -2 
 
 Team members :
  Joshitha Keetha (G01575681)
